@@ -22,6 +22,7 @@ namespace ProyectoCSharpBasico
             //agenda.MostrarContactos();
             //agenda.MostrarOrdenados();
             agenda.MostrarOrdenadosDesc();
+            Console.WriteLine(agenda.NumContactos);
         }
     }
 }
