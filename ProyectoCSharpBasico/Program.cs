@@ -19,8 +19,9 @@ namespace ProyectoCSharpBasico
             agenda.AgregarContacto(c2);
             agenda.AgregarContacto(c3);
 
-            agenda.MostrarContactos();
+            //agenda.MostrarContactos();
             //agenda.MostrarOrdenados();
+            agenda.MostrarOrdenadosDesc();
         }
     }
 }

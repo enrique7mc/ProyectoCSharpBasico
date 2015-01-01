@@ -49,7 +49,17 @@ namespace ProyectoCSharpBasico
         {
             Contacto[] ordenados = new Contacto[_index];
             Array.Copy(_contactos, ordenados, _index);
+            Array.Sort(ordenados);            
+
+            Console.WriteLine(CadenaContactos(ordenados));
+        }
+
+        public void MostrarOrdenadosDesc()
+        {
+            Contacto[] ordenados = new Contacto[_index];
+            Array.Copy(_contactos, ordenados, _index);            
             Array.Sort(ordenados);
+            Array.Reverse(ordenados);
 
             Console.WriteLine(CadenaContactos(ordenados));
         }
@@ -67,7 +77,7 @@ namespace ProyectoCSharpBasico
         private string CadenaContactos(Contacto[] contactos)
         {
             var sb = new StringBuilder();
-            for(int i = 0; i < TAM; i++)
+            for(int i = 0; i < _index; i++)
             {
                 if (_contactos[i] == null) { continue; }
 
