@@ -12,6 +12,11 @@ namespace ProyectoCSharpBasico
         private const int TAM = 10;
         private Contacto[] _contactos;
         private int _index;
+        public int NumContactos 
+        { 
+            get { return _index; }
+            private set {  }
+        }
 
         public Agenda()
         {
