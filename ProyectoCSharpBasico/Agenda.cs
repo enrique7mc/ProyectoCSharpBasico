@@ -15,7 +15,6 @@ namespace ProyectoCSharpBasico
         public int NumContactos 
         { 
             get { return _index; }
-            private set {  }
         }
 
         public Agenda()
@@ -52,6 +51,8 @@ namespace ProyectoCSharpBasico
 
         public void MostrarOrdenados()
         {
+            if(NoHayContactos()) return;
+
             Contacto[] ordenados = new Contacto[_index];
             Array.Copy(_contactos, ordenados, _index);
             Array.Sort(ordenados);            
@@ -59,14 +60,39 @@ namespace ProyectoCSharpBasico
             Console.WriteLine(CadenaContactos(ordenados));
         }
 
+        private bool NoHayContactos()
+        {
+            if(_index == 0)
+            {
+                Console.WriteLine("No hay contactos");
+                return true;
+            }
+            return false;
+        }
+
         public void MostrarOrdenadosDesc()
         {
+            if(NoHayContactos()) { return; }
+
             Contacto[] ordenados = new Contacto[_index];
             Array.Copy(_contactos, ordenados, _index);            
             Array.Sort(ordenados);
             Array.Reverse(ordenados);
 
             Console.WriteLine(CadenaContactos(ordenados));
+        }
+
+        public Contacto BuscarPorNombre(string nombre)
+        {
+            foreach(Contacto contacto in _contactos)
+            {
+                if( contacto != null && contacto.Nombre == nombre)
+                {
+                    return contacto;
+                }
+            }
+
+            return null;
         }
 
         public void MostrarContactos()
